@@ -25,4 +25,5 @@ pre code { background: none; }
 	}
 }
 
-.time {color:gray}
+.time { color:gray; }
+.mint { height: 10em; filter: drop-shadow(0 0 0.75rem #97da54);
