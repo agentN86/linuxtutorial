@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Install Linux</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="icon.png" rel="icon">
+</head>
+<body>
+    <h1>How to Install Linux</h1>
+    <img src="icon.png" style="height: 10em;">
+
+    <h2>Prerequisites</h2>
+    <p>Have a USB or portable SSD available to install installation media, preferably USB 3.0 and has at least 16 GB of storage</p>
+    <p>Something to back up your storage, like something via cloud like Google Drive as you will be wiping your entire drive</p>
+
+    <h2>Table of Contents</h2>
+    <nav id="TableOfContents">
+        <ul>
+            <li>Before Install (Installation)<ul>
+                <li><a href="#iso">Installing the ISO</a></li>
+                <li><a href="#isousb">Putting the ISO into the USB</a></li>
+                <li><a href="#secureboot">Turning off Secure Boot</a></li>
+                <li><a href="#installingmint">Installing Linux</a></li>
+            </ul></li>
+            <li>After Install (NVIDIA, Roblox, etc)<ul>
+                <li><a href="#welcome">Welcome Screen</a></li>
+                <li><a href="#nvidia">NVIDIA Drivers</a></li>
+                <li><a href="#flatpak">Installing: Flatpak/Roblox</a></li>
+                <li><a href="#flatpak">Installing: Deb/Steam</a></li>
+                <li><a href="#flatpak">Installing: APT/VLC</a></li>
+            </ul></li>
+        </ul>
+    </nav>
+    <p><a href="https://en.wikipedia.org/wiki/Linux" target="_blank">Linux</a> is a open source operating system that is a replacement to Windows. It is best for gaming laptops and older hardware as they can significantly improve preformance. In this guide, we will be installing <a href="https://en.wikipedia.org/wiki/Linux_Mint" target="_blank">Linux Mint</a>, a beginner linux distro that looks very good and supports the latest drivers.</p>
+    <blockquote><p>For example, a computer with a 6 core <b>Intel Core i5-10400 @ 2.90Ghz</b> CPU that ran originally 90% with just Windows 11 by itself now only runs 10% with Linux Mint!</p></blockquote>
+    
+    <a name="iso"></a>
+    <h2>Installing the ISO</h2>
+    <p>Firstly, you need to grab the <a href="https://en.wikipedia.org/wiki/Optical_disc_image" target="_blank">ISO file</a> from the Linux Mint website, which is basically a file that contains everything that should be writen onto something like a USB, which we will be doing. You can go ahead and go to the <a href="https://linuxmint.com/" target="_blank">Linux Mint website</a> and hit the <b>Download button</b> to get to the download page.</p>
+    <a href="./img/download.png" target="_blank" style="cursor:pointer;"><img src="./img/download.png" style="height: 30em;"></a>
+    <p>There should be three different versions, <b><a href="https://en.wikipedia.org/wiki/Cinnamon_(desktop_environment)" target="_blank">Cinnamon</a> Edition</b>, <b><a href="https://en.wikipedia.org/wiki/Xfce" target="_blank">Xfce</a> Edition</b>, and <b><a href="https://en.wikipedia.org/wiki/MATE_(desktop_environment)" target="_blank">MATE</a> Edition</b>. This just changes your desktop environment, which is your graphical interface. Consider it basically your desktop! I would recommend the Cinnamon Edition but if you have issues with it I would use the Xfce Edition as it is a bit more lightweight. Once you choose your environment, click on the black download button. For this tutorial, I'll be using the Cinnamon Edition.</p>
+    <a href="./img/mirrors.png" target="_blank" style="cursor:pointer;"><img src="./img/mirrors.png" style="height: 30em;"></a>
+    <p>If you have a torrent you can use the "Torrent Download: 64-bit" and its a bit faster than the mirror download. If you want to download over HTTPS, you can just use the "Download mirrors" section, find your country and select a mirror to download. I would recommend the university ones as I find them to be the most reliable. The ISO file is usually <b>2GB</b>, so let it download for about 5-20 minutes depending on your internet speeds.</p>
+    
+    <a name="isousb"></a>
+    <h2>Putting the ISO into the USB</h2>
+    <p>Now that you successfully installed the ISO file onto your computer, you can know put it on your removeable drive. To do such, you need a program called <a href="https://etcher.balena.io/" target="_blank">Balena Etcher</a>, go ahead and installing by clicking the "Download Etcher" button and download the Windows version. Aftwards, this GUI should show up.</p>
+    <a href="./img/balenaetcher.png" target="_blank" style="cursor:pointer;"><img src="./img/balenaetcher.png" style="height: 50em;"></a>
+    <p>Firstly, click on "Flash from file" and select the Linux Mint iso. Secondly, you want to select the target that you are going to install the installation medium on. <b>Be sure to select the right drive because this will wipe ALL DATA on the drive!</b> Finally, you can go ahead and click on the "Flash!" button. It will ask for administrator permissions, go ahead and give it such.</p>
+    <p>Once it is finished, you can go ahead and restart your computer. Be sure to back up any important files before hand as this will wipe your drive.</p>
+
+    <a name="secureboot"></a>
+    <h2>Turning off Secure Boot</h2>
+    <blockquote><p>This guide differs depending on what motherboard you use. Refer to your motherboard's manual of how to turn off secure boot and enter the BIOS Setup. In this guide, I will be using my motherboard, ASRock, as an example.</p></blockquote>
+    <p>This is required for installing Linux because it is open-source, and doesn't have keys like Microsoft to be "secure". Don't worry, nothing bad happens when you turn off secure boot.</p>
+    <p>To find your BIOS Setup key, you can usually search it up on Google or any other search engine...</p>
+    <a href="./img/key.png" target="_blank" style="cursor:pointer;"><img src="./img/key.png" style="height: 50em;"></a>
+    <p>My motherboard uses the DEL key for BIOS Setup, so go ahead and restart your computer/laptop and spam the BIOS Setup key. You should pop up with a bunch of settings you can change, for example with my motherboard it looks like this... <i>This isn't my original image, rather this comes from PCMag</i></p>
+    <a href="./img/biosez.jpg" target="_blank" style="cursor:pointer;"><img src="./img/biosez.jpg" style="height: 40em;"></a>
+    <p>Usually your BIOS will start in "EZ Mode" which is good for simple changes, like changing your time, but we want to turn off secure boot, which is in Advanced Mode. To go to advanced mode, there usually is a button to let you in. For example, in the above image theres a button that says "Advanced Mode (F6)" which you would click on.</p>
+    <p>On my motherboard, the secure boot toggle is in the "Security" tab though it may be different for you. <b>Most likely, it is best to Google or look at your motherboard manual to see where the secure boot toggle is.</b> At this point, just click on or press ENTER on the toggle and select Disabled! <i>This isn't my original image, rather this comes from the offical ASRock documentation.</i></p></p>
+    <a href="./img/biossecure.jpg" target="_blank" style="cursor:pointer;"><img src="./img/biossecure.jpg" style="height: 20em;"></a>
+    <p>Alright, the last step is to make the installation medium the highest piority so you can boot into Linux Mint. Go to the "Boot" tab, or whatever it is for you and make the "UEFI: (usb name)" or "USB/Hard Disk" or (generally you want to use the UEFI one but if you don't have it use this one) "USB: (usb name)" Boot Option #1 or the highest on the list. <i>This isn't my original image, rather this comes from ecos.de</i></p></p>
+    <a href="./img/biosboot.png" target="_blank" style="cursor:pointer;"><img src="./img/biosboot.png" style="height: 30em;"></a>
+    <p>You are finally done, you can go to the "Exit" tab or whatever it is for you, and save and exit your changes. It will now boot from your installation medium.</p>
+
+    <a name="installingmint"></a>
+    <h2>Installing Linux</h2>
+    <p>Usually most modern computers use the UEFI boot instead of the original legacy boot, so most likely you will see this when your computer boots.</p>
+    <a href="./img/grub-efi.png" target="_blank" style="cursor:pointer;"><img src="./img/grub-efi.png" style="height: 25em;"></a>
+    <p>Press ENTER on "Start Linux Mint X.XX Cinnamon 64-bit" or whatever edition you chose. After a few seconds, the Linux Mint logo should pop up in the middle of your screen! If you see this, then there will be smooth sailing up ahead.</p>
+    <p>After a bit (~30-60 seconds), your cursor will pop up and then the desktop environment.</p>
+    <a href="./img/cinnamon.png" target="_blank" style="cursor:pointer;"><img src="./img/cinnamon.png" style="height: 30em;"></a>
+    <p>Move your cursor over to "Install Linux Mint" and double click on it. Go through the installation process. If you disabled secure boot correctly, it shouldn't ask you to put the secure boot password. During the installation, you will find a page like this:</p>
+    <a href="./img/installer-codecs.png" target="_blank" style="cursor:pointer;"><img src="./img/installer-codecs.png" style="height: 30em;"></a>
+    <p>You will want to tick this on. Without this, most videos or audios on websites or on your computer will not play.</p>
+    <p>Anywho, after installation is completed it will ask you to restart. Click on "Restart Now" and then it should ask you to <b>take out the installation medium</b>. If it does ask, take it out and then press ENTER. If it doesn't say and reboots, turn off your computer, take out the installation medium, and then turn the computer back on.</p>
+    <p>If you booted into Linux Mint with no problems, congrats! You successfully installed Linux Mint. 🎉</p>
+
+    <a name="welcome"></a>
+    <h2>Welcome Screen</h2>
+    <p>When you first boot into Linux Mint, you should be greeted with the Welcome Screen.</p>
+    <a href="./img/welcome.png" target="_blank" style="cursor:pointer;"><img src="./img/welcome.png" style="height: 30em;"></a>
+    <p>You can continue by clicking on the "Let's go!" button and then it will show programs that can be configured to your hearts content. You can also find documentation and help documents if you get stuck while using Linux Mint. You can go look at all the programs by yourself, but I'm gonna look over the Driver Manager for NVIDIA GPUs.</p>
+    <p>Oh yeah, don't forget to turn off "Show this dialog at startup" if you done using the Welcome Screen and updating.</p>
+    <a name="nvidia"></a>
+    <h2>NVIDIA Drivers</h2>
+    <blockquote><p>You can skip this section if you have an AMD GPU because Linux already has the latest drivers for AMD, thanks to AMD's cool open source superiority.</p></blockquote>
+    <p>Linux Mint comes with NVIDIA drivers 550.X.X, which is outdated at this point. By default, they use the open source driver, nouveau, which works.. <i>decently</i>. To get the latest drivers, by the time of writing 570.X.X, you just need to add the NVIDIA PPA repository, which basically is a folder full of packages for your use.</p>
+    <p>To add this repository, press the super key (Windows key) and type or find the program "Software Sources". It will ask for your password, type it in and press "Authenticate" or press ENTER. On the left side of the window, there should be a tab called "PPAs", click on that. Afterwards, click the "Add" button at the bottom of the window and type the following link:</p>
+    <a href="./img/ppa.png" target="_blank" style="cursor:pointer;"><img src="./img/ppa.png" style="height: 30em;"></a>
+    <p>Once pressing "OK", it should ask for confirmation. Press "Confirm" and you should see a green button appear talking about updating APT repos. You want to click on that and let it do its thing. Once it is done, you can close out of Software Sources and open back up Driver Manager. The latest NVIDIA drivers should be there!</p>
+    <a href="./img/nvidia.png" target="_blank" style="cursor:pointer;"><img src="./img/nvidia.png" style="height: 30em;"></a>
+
+
+    <hr>
+    Created by @agentn86<br>
+    Last updated <span data-timestamp="1747034262" class="time"></span>
+</body>
+<script src="script.js"></script>
+</html>
