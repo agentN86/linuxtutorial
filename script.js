@@ -1,4 +1,15 @@
 
+var inverse = false;
+const sound = document.getElementById('sound');
+
+document.querySelector(".mint").onclick = function () {
+  inverse = !inverse;
+  document.body.setAttribute('data-inverse', inverse);
+  if (inverse) { document.querySelectorAll("img").forEach(img=>{img.classList.add('slop')}); sound.play() } else {
+    document.querySelectorAll("img").forEach(img=>{img.classList.remove('slop')}); sound.pause(); sound.currentTime=0;
+  }
+}
+
 document.querySelectorAll("img").forEach(img => {
   img.addEventListener("mouseenter", () => {
     img.style.transform = "scale(1.03)";

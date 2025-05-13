@@ -2,8 +2,9 @@
 /* edited some of the code to add a bit of animation, nothing really else */
 
 :root { --bg: #1e1e1e;--fg: #bdbdbd; --hl: #413f42; --ch: #48B8D0; scroll-behavior: smooth; }
+[data-inverse="true"] { --bg: url('./img/missing.png'); --fg: red; --hl: purple; --ch: blue; }
 
-body { background-color: var(--bg); color: var(--fg); width: 90%; max-width: 80em; margin: auto; font-family: monospace; font-size: 1.3em; }
+body { background: var(--bg); color: var(--fg); width: 90%; max-width: 80em; margin: auto; font-family: monospace; font-size: 1.3em; }
 
 h1 { font-size: 2.6em; text-align: center; }
 a { text-decoration: none; color: var(--ch); }
@@ -26,4 +27,5 @@ pre code { background: none; }
 }
 
 .time { color:gray; }
-.mint { height: 10em; filter: drop-shadow(0 0 0.75rem #97da54);
+.mint { height: 10em; filter: drop-shadow(0 0 0.75rem #97da54); }
+.slop { filter: grayscale(0.58) brightness(2.3) contrast(1.7) hue-rotate(231deg) saturate(2.3) blur(1.1px); }
